@@ -1,3 +1,52 @@
-[gd_scene format=3 uid="uid://ppll40aikglu"]
+[gd_scene load_steps=9 format=3 uid="uid://ppll40aikglu"]
+
+[ext_resource type="Texture2D" uid="uid://c1nq14tr8i7tx" path="res://Assets/icon.svg" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://dvigwbs12r4s5" path="res://Scripts/player.gd" id="2_bo1nx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
+
+[sub_resource type="Sky" id="Sky_8gbba"]
+sky_material = SubResource("ProceduralSkyMaterial_bo1nx")
+
+[sub_resource type="Environment" id="Environment_jjvhh"]
+background_mode = 2
+sky = SubResource("Sky_8gbba")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kry3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jjgbg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8gbba"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jjvhh"]
 
 [node name="main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jjvhh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="world" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_kry3j")
+
+[node name="player" type="CharacterBody3D" parent="."]
+script = ExtResource("2_bo1nx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
+shape = SubResource("BoxShape3D_8gbba")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D"]
+mesh = SubResource("BoxMesh_jjvhh")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.28667)
