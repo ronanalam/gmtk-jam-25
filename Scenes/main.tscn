@@ -30,8 +30,9 @@ animations = [{
 size = Vector3(0.25, 0.25, 0.25)
 
 [sub_resource type="Curve3D" id="Curve3D_jjvhh"]
+bake_interval = 0.1
 _data = {
-"points": PackedVector3Array(1.90869, 0.306158, 0.86312, -1.90869, -0.306158, -0.86312, -0.238657, -0.0429261, 0.0104313, 0, 0, 0, 0, 0, 0, -4.15026, -0.380877, -0.220659, 0, 0, 0, 0, 0, 0, -6.01573, 1.0154, -2.04367, 0, 0, 0, 0, 0, 0, -3.02913, 1.01538, -4.24096, 0, 0, 0, 0, 0, 0, 2.24969, 1.01538, -5.26093, 0, 0, 0, 0, 0, 0, 5.66751, 1.01538, -2.91678, 0, 0, 0, 0, 0, 0, 6.6517, 1.01538, 1.39576, 0, 0, 0, 0, 0, 0, 3.53808, 1.01538, 5.20725),
+"points": PackedVector3Array(2.07016, 0.0263974, 1.30628, -2.07016, -0.0263974, -1.30628, -0.238657, -0.0429261, 0.0104313, 0, 0, 0, 0, 0, 0, -4.15026, -0.380877, -0.220659, 0, 0, 0, 0, 0, 0, -6.01573, 1.0154, -2.04367, 0, 0, 0, 0, 0, 0, -3.02913, 1.01538, -4.24096, 0, 0, 0, 0, 0, 0, 2.24969, 1.01538, -5.26093, 0, 0, 0, 0, 0, 0, 5.66751, 1.01538, -2.91678, 0, 0, 0, 0, 0, 0, 6.6517, 1.01538, 1.39576, 1.69591, 0.595351, 0.881329, -1.69591, -0.595351, -0.881329, 2.48909, 0.594347, 4.71945),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
@@ -66,20 +67,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_jjvhh")
 script = ExtResource("3_8gbba")
-count = 36
+points = 2
 radius = 2.0
+z_position = -3.0
 stripWidth = 0.5
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
 polygon = PackedVector2Array(0, 0, 0, -0.1, 0.5, -0.1, 0.5, 0)
 mode = 2
 path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 0.2
+path_interval_type = 1
+path_interval = 1.0
 path_simplify_angle = 0.0
 path_rotation = 2
 path_rotation_accurate = true
-path_local = true
+path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
-path_joined = true
+path_joined = false
