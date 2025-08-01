@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c1nq14tr8i7tx" path="res://Assets/icon.svg" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dvigwbs12r4s5" path="res://Scripts/player.gd" id="2_bo1nx"]
-[ext_resource type="Script" uid="uid://dmsc51op4juc0" path="res://Scenes/path_3d.gd" id="3_8gbba"]
+[ext_resource type="Script" uid="uid://dmsc51op4juc0" path="res://Scripts/path_3d.gd" id="3_8gbba"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
 
