@@ -50,7 +50,6 @@ centered = false
 sprite_frames = SubResource("SpriteFrames_kry3j")
 
 [node name="player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("2_bo1nx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
@@ -66,10 +65,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 [node name="mobius_path" type="Path3D" parent="."]
 curve = SubResource("Curve3D_jjvhh")
 script = ExtResource("3_8gbba")
-points = 4
+points = 32
 radius = 2.0
 z_position = -3.0
-stripWidth = 0.5
+stripWidth = 1.0
+stripThickness = 0.1
 twists = 1
 
 [node name="mobius_polygon" type="CSGPolygon3D" parent="mobius_path"]
