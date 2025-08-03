@@ -73,7 +73,7 @@ void fragment() {
 	vec2 base_uv = UV;
 
 	vec4 albedo_tex = texture(texture_albedo, base_uv);
-	
+
 	NORMAL = normalize((MODEL_MATRIX * vec4(NORMAL, 0.0)).xyz);
 	vec3 world_normal = (INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
 	ALBEDO = albedo.rgb * albedo_tex.rgb * world_normal;
@@ -151,7 +151,7 @@ path_joined = false
 material = SubResource("ShaderMaterial_jjvhh")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="mobius_path"]
-transform = Transform3D(-4.37113e-08, 0.999997, -4.37126e-08, 0, -4.37112e-08, -1.00003, -0.999998, -4.37112e-08, 1.91074e-15, 1, 0, 0)
+transform = Transform3D(-4.37113e-08, 0.999997, -4.37127e-08, 0, -4.37113e-08, -1.00003, -0.999998, -4.37113e-08, 1.91074e-15, 1, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
