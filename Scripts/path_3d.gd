@@ -28,7 +28,7 @@ func generate_segments(num_segments: int, r: float) -> void:
 		var out_position_i := r * handle_length * tangent_direction_i
 		
 		curve.add_point(point_position_i, in_position_i, out_position_i)
-		curve.set_point_tilt(i, twists * PI * i/num_segments)
+		curve.set_point_tilt(i, twists * PI * frac)
 
 
 func configure_polygon(polygon: CSGPolygon3D, width: float, thickness: float):
